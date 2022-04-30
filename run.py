@@ -30,4 +30,8 @@ while (playerScore != 3 and computerScore != 3):
 
     while True:
         playerChoice =  input("\n Choose Water, Earth of Fire: ")
+        if (playerChoice == "Water" or playerChoice == "Earth" or playerChoice == "Fire"):
+            break
+        else:
+            print("Invalid input. Try again")
 
