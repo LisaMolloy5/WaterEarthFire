@@ -9,11 +9,7 @@ print("--------------------------------------------------------------------")
 
 ### Game score variables
 
-computerScore = 0
-playerScore = 0
-tieScore = 0
-
-gameChoices = ["Water", "Earth", "Fires"]
+gameChoices = ["Water", "Earth", "Fire"]
 
 def hasWon(playerChoice, computerChoice):
     """
@@ -24,30 +20,32 @@ def hasWon(playerChoice, computerChoice):
     elif (playerChoice == "Fire" and computerChoice == "Water") or (playerChoice == "Earth" and computerChoice == "Fire") or (playerChoice == "Water" and computerChoice == "Earth"):
         print("Sorry, you lost. :(")
         return "Computer"
-    else:
-        print("It's a tie.")
+    elif (playerChoice == computerChoice):
+        print("It's a Tie")
         return "Tie"
+    else:
+        print("Invalid input. Try again.")
 
-while (playerScore != 3 and computerScore != 3):
+while True:
+    playerChoice = input("\n Enter your choice. Water Earth or Fire: ")
 
-    while True:
-        playerChoice =  input("\n Choose Water, Earth of Fire: ")
-        if (playerChoice == "Water" or playerChoice == "Earth" or playerChoice == "Fire"):
-            break
-        else:
-            print("Invalid input. Try again")
-    
     computerChoice = random.choice(gameChoices)
 
     print("Your choice: ", playerChoice)
     print("Computer choice: ", computerChoice)
+
     result = hasWon(playerChoice, computerChoice)
+
     if(result == "Player"):
         playerScore += 1
     elif(result == "Computer"):
         computerScore += 1
-    else:
+    elif(result == "Tie"):
         tieScore += 1
-    print("Your score: ", playerScore, "Computer: ", computerScore, "Ties: ", tieScore)
+
+
+
+                
+
 
 
