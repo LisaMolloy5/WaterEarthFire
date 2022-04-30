@@ -26,4 +26,8 @@ def hasWon(playerChoice, computerChoice):
     else:
         print("It's a tie.")
 
-hasWon()
+while (playerScore != 3 and computerScore != 3):
+
+    while True:
+        playerChoice =  input("\n Choose Water, Earth of Fire: ")
+
