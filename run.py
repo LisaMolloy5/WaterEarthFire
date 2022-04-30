@@ -34,4 +34,6 @@ while (playerScore != 3 and computerScore != 3):
             break
         else:
             print("Invalid input. Try again")
+    
+    computerChoice = random.choice(gameChoices)
 
