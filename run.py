@@ -23,8 +23,10 @@ def hasWon(playerChoice, computerChoice):
         return "Player"
     elif (playerChoice == "Fire" and computerChoice == "Water") or (playerChoice == "Earth" and computerChoice == "Fire") or (playerChoice == "Water" and computerChoice == "Earth"):
         print("Sorry, you lost. :(")
+        return "Computer"
     else:
         print("It's a tie.")
+        return "Tie"
 
 while (playerScore != 3 and computerScore != 3):
 
@@ -36,4 +38,16 @@ while (playerScore != 3 and computerScore != 3):
             print("Invalid input. Try again")
     
     computerChoice = random.choice(gameChoices)
+
+    print("Your choice: ", playerChoice)
+    print("Computer choice: ", computerChoice)
+    result = hasWon(playerChoice, computerChoice)
+    if(result == "Player"):
+        playerScore += 1
+    elif(result == "Computer"):
+        computerScore += 1
+    else:
+        tieScore += 1
+    print("Your score: ", playerScore, "Computer: ", computerScore, "Ties: ", tieScore)
+
 
