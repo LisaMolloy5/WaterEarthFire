@@ -13,3 +13,17 @@ computerScore = 0
 playerScore = 0
 tieScore = 0
 
+gameChoices = ["Water", "Earth", "Fires"]
+
+def hasWon(playerChoice, computerChoice):
+    """
+    """      
+    if (playerChoice == "Water" and computerChoice == "Fire") or (playerChoice == "Fire" and computerChoice == "Earth") or (playerChoice == "Earth" and computerChoice == "Water"):
+        print("Yay! You won :D")
+        return "Player"
+    elif (playerChoice == "Fire" and computerChoice == "Water") or (playerChoice == "Earth" and computerChoice == "Fire") or (playerChoice == "Water" and computerChoice == "Earth"):
+        print("Sorry, you lost. :(")
+    else:
+        print("It's a tie.")
+
+hasWon()
