@@ -21,7 +21,7 @@ def hasWon(playerChoice, computerChoice):
         print("Invalid input. Try again.")
 
 while True:
-    playerChoice = input("Enter your choice. Water Earth or Fire: ")
+    playerChoice = input("Enter your choice. Water Earth or Fire:\n")
 
     computerChoice = random.choice(["Water", "Earth", "Fire"])
 
@@ -30,7 +30,7 @@ while True:
 
     hasWon(playerChoice, computerChoice)
 
-    play_again = input("Play again? yes/no: ").lower()
+    play_again = input("Play again? yes/no:\n").lower()
 
     if play_again != "yes":
         break
