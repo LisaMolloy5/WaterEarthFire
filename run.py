@@ -6,6 +6,10 @@ print("Welcome to Water Earth Fire")
 print("A rock, paper, scissors type game based on Avatar The Last Airbender.\n Use your abilities to defeat your oponent.")
 print("--------------------------------------------------------------------")
 
+playerScore = 0
+computerScore = 0
+tieScore = 0
+
 def playGame():
     """
     Function to create game combinations and playr input.
@@ -17,7 +21,9 @@ def playGame():
 
     computerChoice = random.choice(['Water', 'Earth', 'Fire'])
 
-    if player 
+    if playerChoice == computerChoice:
+        print("You and computer have both chosen", playerChoice "It,s a tie.")
+
 
     
 
