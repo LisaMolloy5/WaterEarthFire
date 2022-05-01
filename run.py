@@ -12,38 +12,71 @@ print("Fire Beats Earth")
 print("Earth Beats Water")
 print("Good Luck :D")
 
+computerScore = 0
+playerScore = 0
+tieScore = 0
+
 
 def hasWon(playerChoice, computerChoice):
     """
     """      
     if (playerChoice == "Water" and computerChoice == "Fire") or (playerChoice == "Fire" and computerChoice == "Earth") or (playerChoice == "Earth" and computerChoice == "Water"):
         print("YOU WON! :D")
+        return "Player"
     elif (playerChoice == "Fire" and computerChoice == "Water") or (playerChoice == "Earth" and computerChoice == "Fire") or (playerChoice == "Water" and computerChoice == "Earth"):
         print("YOU LOST :(")
+        return "Computer"
     elif (playerChoice == computerChoice):
         print("TIE!")
-    else:
-        print("Invalid input. Try again.")
+        return "Tie"
+    
+def newGame():
+    while (playerScore != 3 and computerScore != 3):
 
-while True:
-    playerChoice = input("Enter your choice. Water Earth or Fire:\n")
+        while True:
+            playerChoice = input("Make your choice: Water, Fire or Earth...")
+            if (playerChoice == "Water" or playerChoice == "Fire" or playerChoice == "Earth"):
+                break
+            else:
+                print("Invalid Input. Try Again...")
+        
+        computerChoice = random.choice(["Water", "Fire", "Earth"])
 
-    computerChoice = random.choice(["Water", "Earth", "Fire"])
+        print("Your Choice: ", playerChoice)
+        print("Computer choice: ", computerChoice)
+        result = hasWon(playerChoice, computerChoice)
 
-    print("Your choice: ", playerChoice)
-    print("Computer choice: ", computerChoice)
+        if (result == "Player"):
+            playerScore += 1
+        elif (result == "Computer"):
+            computerScore += 1
+        else:
+            tieScore += 1
 
-    hasWon(playerChoice, computerChoice)
+        print("Your Score:", playerScore, "...Computer Score:", computerScore, "...Tie Score:", tieScore)  
 
-    play_again = input("Play again? yes/no:\n").lower()
+def endGame():
+    if (playerScore == 3):
+        print("CONGRATULATIONS! You Won The Game")
+    elif (computerScore == 3):
+        print("Sorry! You Lost The Game.")
 
-    if play_again != "yes":
-        break
+    playAgain = input("Play Again? yes/no...")
 
-print("Bye, Thanks for playing")
+    if (playAgain == yes):
+        hasWon(playerChoice, computerChoice)
+        resetGame()
+
+def resetGame():
+    computerScore = 0
+    playerScore = 0
+    tieScore = 0
+
+    newGame()
 
 
-                
+endGame()
+      
 
 
 
